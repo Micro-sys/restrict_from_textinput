@@ -1,0 +1,32 @@
+
+<script type="text/javascript">
+    function lettersOnly(input){
+        var regex =/[*0-9,.,!,@,#,$,%,^,&,*,(,),<,>,?,/]/gi;
+        input.value = input.value.replace(regex,"");
+    }
+</script>
+<script type="text/javascript">
+    function numberOnly(input){
+        var regex =/[*a-z]/gi;
+        input.value = input.value.replace(regex,"");
+    }
+</script>
+
+
+
+<center><h2>Registration form</h2></center></br>
+  <form class="form-horizontal" method="post" action="add_user.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2 col-sm-offset-2" for="name">Name:</label>
+	  
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" onkeyup="lettersOnly(this)" required>
+      </div>
+    </div>
+     <div class="form-group">
+      <label class="control-label col-sm-2 col-sm-offset-2" for="number">Number:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="number" placeholder="Enter number" name="number" onkeyup="numberOnly(this)" required>
+      </div>
+  </div>
+</form>
